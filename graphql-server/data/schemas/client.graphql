@@ -1,0 +1,39 @@
+type Client {
+    id: ID
+    name: String 
+    lastname: String 
+    company: String 
+    emails: [Email] 
+    age: String 
+    type: TypeClient 
+    orders: [Order]
+}
+enum TypeClient {
+    BASIC
+    PREMIUM
+}
+type Order {
+    product: String
+    price: String
+}
+type Email {
+    email: String
+}
+type Query {
+    getClient(id: ID): Client
+}
+type ClientInput {
+    id: ID
+    name: String!
+    lastname: String!
+    company: String!
+    emails: [Email] 
+    age: String!
+    type: TypeClient!
+    orders: [Order]
+}
+type Mutation {
+    """ Create New Clients """
+    createClient(input: Client): Client
+}
+
