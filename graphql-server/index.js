@@ -10,7 +10,15 @@ app.get('/', (req, res) => {
 })
 
 const root = {
-    hola: () => 'Hola World desde Graph Ql'
+    cliente: () => {
+        return {
+            "id": 1,
+            "name": "Joni",
+            "lastname": "Aguero",
+            "company": "Udemy",
+            "email": "joni@joni.com"
+        }
+    }
 }
 // graphqlHTTP nos permite conectar graphql con express
 app.use('/graphql', graphqlHTTP({
